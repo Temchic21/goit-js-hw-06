@@ -1,16 +1,9 @@
 const categories = document.querySelectorAll('.item');
-console.log("Numder of Categories:" , categories.length)
-categories.forEach(category => {
-    const group = [...category.children];
-    group.forEach(element => {
-        if(element.tagName === 'H2') {
-            console.log('Category:', element.textContent);
-        }
-    });
-    group.forEach(element => {
-        if(element.tagName === 'UL') {
-            console.log('Elements:' , element.children.length);
-        }
-    });
-})
+console.log(`Number of categories: ${categories.length}`)
+
+categories.forEach(item => {
+    console.log(`Category: ${item.firstElementChild.textContent}`);
+    console.log(`Elements: ${item.lastElementChild.children.length}`)
+});
+
 
